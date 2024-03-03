@@ -25,6 +25,7 @@ class App extends Component {
         .then(({ hits, totalHits }) => {
           if (!hits.length) {
             this.setState({ isEmpty: true });
+            return;
           }
           this.setState(prevState => ({
             photos: [...prevState.photos, ...hits],
